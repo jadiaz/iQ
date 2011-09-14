@@ -2,6 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.0'
 gem 'mongoid'
+gem 'bson_ext'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -26,4 +27,7 @@ group :development, :test do
   gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
   gem 'guard-rspec'
   gem 'guard-livereload'
+
+  gem 'pry'
+  gem 'pry-doc'
 end

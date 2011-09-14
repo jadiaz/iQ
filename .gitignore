@@ -3,3 +3,9 @@ db/*.sqlite3
 log/*.log
 tmp/
 .sass-cache/
+.DS_Store
+*.swp
+config/initializers/pry.rb
+public/CapEdibles
+config/database.yml
+~

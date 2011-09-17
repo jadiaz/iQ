@@ -1,6 +1,28 @@
 require 'spec_helper'
 
 describe User do
+
+  before(:each) do
+    @attr = {
+      :first_name => "HeatSync",
+      :last_name  => "Labs",
+      :email      => "info@heatsynclabs.org",
+      :password   => "test123456",
+      :password_confirmation => "test123456"
+    }
+  end
+
+  describe "data" do
+    it { should have_field(:email).of_type(String) }
+    it { should have_field(:crypted_password).of_type(String) }
+    it { should have_field(:salt).of_type(String) }
+  end
+  
+  describe "validations" do
+    it { should validate_presence_of(:password) }
+    it { should validate_confirmation_of(:password) }
+  end
+
   describe "authentication" do
 
     it "should require an email address" do
@@ -39,12 +61,6 @@ describe User do
     it "should reject email address identical up to case" do
       User.create!(@attr)
       user = User.new(@attr.merge(:email => @attr[:email].capitalize))
-      user.should_not be_valid
-    end
-
-    it "should validate email event if it is merged" do
-      user_hash = { :name => "example user", :email => "user@foo,com", :password => "123456", :password_confirmation => "123456" }
-      user = User.new(user_hash)
       user.should_not be_valid
     end
 

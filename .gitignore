@@ -9,3 +9,4 @@ config/initializers/pry.rb
 public/CapEdibles
 config/database.yml
 ~
+doc/*

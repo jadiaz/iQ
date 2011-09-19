@@ -1,7 +1,5 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+puts 'EMPTY THE MONGODB DATABASE'
+Mongoid.master.collections.select { |c| c.name !~ /system/ }.each(&:drop)
+puts 'SETTING UP DEFAULT USER ACCOUNT'
+user = User.create! :email => 'test.user@heatsynclabs.org', :password => 'test123456', :password_confirmation => 'test123456'
+puts 'NEW USER CREATED: ' << user.email

@@ -1,0 +1,11 @@
+@import "partials/base";
+
+@include html5-boilerplate-styles;
+@include html5-boilerplate-fonts();
+
+body {
+  color: $font-color;
+  h1 { @include font-size(26px); font-weight: bold; }
+  h2 { @include font-size(22px); }
+  a  { @include link-colors($link-color, $link-hover-color, $link-active-color, $link-visited-color, $link-focus-color); }
+}

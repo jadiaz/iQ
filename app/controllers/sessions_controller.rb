@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
         format.html { redirect_back_or_to(root_path, :notice => 'Sign in successfull.') }
         format.js
       else
-        format.html { flash.now[:alert] = 'Sign in failed.'; render :action => 'new' }
+        format.html { flash.now[:alert] = 'Email or password was incorrect.'; render :action => 'new' }
         format.js
       end
     end

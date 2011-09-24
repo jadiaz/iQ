@@ -4,8 +4,83 @@
 @include html5-boilerplate-fonts();
 
 body {
-  color: $font-color;
+  background-color:  $bg-color;
+  color:             $font-color;
   h1 { @include font-size(26px); font-weight: bold; }
   h2 { @include font-size(22px); }
   a  { @include link-colors($link-color, $link-hover-color, $link-active-color, $link-visited-color, $link-focus-color); }
 }
+
+body.sign-in {
+  @include container;
+  background-color: #222;
+}
+
+input {
+  @include border-radius(5px);
+  @include single-box-shadow;
+  text-align: left;
+  margin: 10px 0;
+  width: 280px;
+  padding: 6px 6px 8px 6px;
+  border-width: 1px;
+  background-color: white;
+  font-size: 14px !important;
+
+  .button {
+    @include single-text-shadow;
+    @include background-image(linear-gradient(top left, #333, #0c0));
+    font-weight: bold;
+    width: 100%;
+    cursor: pointer;
+    text-align: center;
+    border: 1px solid black;
+    margin-top: 10px;
+    line-height: 14px !important;
+    padding: 8px 0;
+    color: #111;
+  }
+}
+
+section#login-wrapper {
+  @include column(14, true);
+  @include border-radius(5px);
+  background-color:  #181818;
+  text-align:        left;
+  margin-top:        120px;
+
+  #login {
+    @include column(5);
+    padding: 10px 20px 20px 20px;
+    h1 {
+      font-size: 18px;
+      font-weight: bold;
+      color: white;
+      padding-bottom: 5px;
+    }
+  }
+
+  #login-info {
+    @include column(7,true);
+    padding: 20px;
+    padding-bottom: 10px;
+    border-left: 2px solid #222;
+
+    h2 {
+      font-size:       14px;
+      font-weight:     bold;
+      letter-spacing:  -0.3px;
+      margin-bottom: 8px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 21px;
+    }
+  }
+
+  strong {
+    color: $tron-orange;
+  }
+}
+

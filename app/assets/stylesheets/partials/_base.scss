@@ -8,7 +8,7 @@ $tron-blue:        #6FC3DF;
 $tron-black:       #0C141F;
 $compass-black:    #2F2F2F;
 
-$bg-color:         #FFF;
+$bg-color:         $compass-black;
 $header-bg-color:  #191919;
 
 $link-color:          $tron-orange !default;
@@ -25,10 +25,11 @@ $base-font-family: Corbel, unquote("Lucida Grande"), unquote("Lucida Sans Unicod
 $base-font-size:    13px !default;
 $base-line-height:  1.231 !default;
 
-$font-color:  $compass-black !default;
+$font-color:  #AAA !default;
 
 @import "compass/reset";
 @import "compass/utilities";
+@import "compass/css3";
 @import "partials/fonts";
 @import "partials/styles";
 

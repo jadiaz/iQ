@@ -5,3 +5,6 @@ MongoDB
 Dojo Toolkit
 
 with testing
+
+
+authorization is done with the Sorcery Gem

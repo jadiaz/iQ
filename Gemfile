@@ -1,9 +1,12 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.1.0'
+
+# Database
 gem 'mongoid', '2.2.0'
 gem 'bson_ext', '1.3.1'
 
+# Authentication
 gem 'sorcery'
 
 # Gems used only for assets and not required
@@ -17,6 +20,7 @@ end
 
 gem 'jquery-rails'
 
+# Test Group
 group :development, :test do
   gem 'rspec-rails', ">= 2.6.1"
   gem 'database_cleaner', ">= 0.6.7"

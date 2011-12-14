@@ -1,5 +1,10 @@
 IQ::Application.routes.draw do
   root :to => 'home#index'
+
+  namespace :iq do
+    root :to => 'home#index'
+    resources :members
+  end
   
   resources :sessions
 

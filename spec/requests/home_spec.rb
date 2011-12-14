@@ -14,10 +14,6 @@ describe "Home page" do
     current_path.should eql(root_path)
   end
 
-  it "should display HSL - iQ as title" do
-    find('title').should have_content('iQ')
-  end
-
   describe "sign in" do
 
     after(:each) do
@@ -33,7 +29,7 @@ describe "Home page" do
       find('nav').click_link('sign in')
       current_path.should eql(sign_in_path)
 
-      within("form#login") do
+      within("form") do
         fill_in('email', :with => @user.email)
         fill_in('password', :with => 'test123456')
         #check('Remember me')
@@ -48,7 +44,7 @@ describe "Home page" do
       find('nav').click_link('sign in')
       current_path.should eql(sign_in_path)
 
-      within("form#login") do
+      within("form") do
         fill_in('email', :with => @user.email)
         fill_in('password', :with => 'test123456' )
         #check('Remember me')
@@ -63,7 +59,7 @@ describe "Home page" do
       find('nav').click_link('sign in')
       current_path.should eql(sign_in_path)
 
-      within("form#login") do
+      within("form") do
         fill_in('email', :with => 'invalid_user@heatsinclabs.org')
         fill_in('password', :with => 'test123456' )
         #check('Remember me')
@@ -77,7 +73,7 @@ describe "Home page" do
       find('nav').click_link('sign in')
       current_path.should eql(sign_in_path)
 
-      within("form#login") do
+      within("form") do
         fill_in('email', :with => @user.email)
         fill_in('password', :with => 'test098765' )
         #check('Remember me')

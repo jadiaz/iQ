@@ -1,2 +1,0 @@
-module Iq::HomeHelper
-end

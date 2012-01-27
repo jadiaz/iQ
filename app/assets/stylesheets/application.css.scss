@@ -11,6 +11,36 @@ body {
   a  { @include link-colors($link-color, $link-hover-color, $link-active-color, $link-visited-color, $link-focus-color); }
 }
 
+header {
+  @include background(linear-gradient(#000, #333));
+  @include single-box-shadow(rgba(0,0,0,.25), 0, 2px, 3px);
+  @include font-size(14px);
+  height:     36px;
+  width:      100%;
+  
+  
+  #header-base {
+    @include container;
+    nav.global-actions {
+      @include column(5);
+      ol { @include horizontal-list; }
+    }
+    nav.header-user {
+      @include column(6,true);
+      margin-top:  2px;
+      float:       right;
+      height:      31px;
+      ol { @include horizontal-list; }
+    }
+  }
+
+
+}
+
+
+
+
+
 body.sign-in {
   @include container;
   background-color: #222;

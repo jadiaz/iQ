@@ -8,10 +8,10 @@ $tron-blue:        #6FC3DF;
 $tron-black:       #0C141F;
 $compass-black:    #2F2F2F;
 
-$bg-color:         $tron-black;
+$bg-color:         #FFF;
 $header-bg-color:  #191919;
 
-$link-color:          $tron-orange !default;
+$link-color:          lighten($tron-orange, 15%) !default;
 $link-hover-color:    $tron-blue !default;
 $link-active-color:   #607890 !default;
 $link-visited-color:  lighten($tron-orange, 15%) !default;

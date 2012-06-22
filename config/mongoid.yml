@@ -1,20 +1,28 @@
 development:
-  host: localhost
-  database: iq_development
+  sessions:
+    default:
+      database: iq_development
+      hosts:
+        - localhost:27017
 
 test:
-  host: localhost
-  database: iq_test
+  sessions:
+    default:
+      database: iq_test
+      hosts:
+        - localhost:27017
 
 # set these environment variables on your prod server
+<% if ENV['MONGOHQ_URL'] %>
+  <% uri = URI.parse(ENV['MONGOHQ_URL']) %>
 production:
-  host: <%= ENV['MONGOID_HOST'] %>
-  port: <%= ENV['MONGOID_PORT'] %>
-  username: <%= ENV['MONGOID_USERNAME'] %>
-  password: <%= ENV['MONGOID_PASSWORD'] %>
-  database: <%= ENV['MONGOID_DATABASE'] %>
-  # slaves:
-  #   - host: slave1.local
-  #     port: 27018
-  #   - host: slave2.local
-  #     port: 27019
+  sessions:
+    default:
+      database: <%= uri.path.sub('/', '') %>
+      username: <%= uri.user %>
+      password: <%= uri.password %>
+      hosts:
+        - <%= uri.host %>:<%= uri.port %>
+  options:
+    use_utc: true
+<% end %>

@@ -3,8 +3,8 @@ source 'http://rubygems.org'
 gem 'rails', '3.2.6'
 
 # Database
-gem 'mongoid', '2.3.4'
-gem 'bson_ext', '1.5.1'
+gem 'mongoid', '~> 3.0.0.rc'
+# gem 'bson_ext', '1.5.1'
 
 # Authentication
 gem 'sorcery'

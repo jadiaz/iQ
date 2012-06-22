@@ -1,6 +1,7 @@
-$blueprint-grid-columns : 16;
-$blueprint-grid-width   : 40px;
-$blueprint-grid-margin  : 20px;
+$total-columns  : 12;             // a 12-column grid
+$column-width   : 4em;            // each column is 4em wide
+$gutter-width   : 1em;            // 1em gutters between columns
+$grid-padding   : $gutter-width;  // grid-padding equal to gutters
 
 $tron-orange:      #DF740C;
 $tron-yellow:      #FFE64D;

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Your Friendly Hackerspace - iQ</title>
+  <title>HeatSync Labs - iQ</title>
   <%= stylesheet_link_tag    "screen" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -36,34 +36,10 @@
 
 <!-- Main Content -->
 <div class="container"> 
-  <header>
-  <div id="header-base">
-    <nav class="global-actions">
-      <ol>
-        <li><a>Your Friendly Hackerspace</a></li> 
-        <li></li>
-        <li><a>iQ</a></li>
-      </ol>
-    </nav>
-    <nav class="header-user">
-    <ol>
-      <li>
-      <% if current_user %>
-        <%= current_user.email %>
-      <% else %>
-        <%= link_to 'Sign In', sign_in_path %> or <a href="#">Create an Account</a>       
-      <% end %>
-      </li>
-      <li>
-      <a href="#">Explore</a>
-      </li>
-    </ol>
-    </nav>
-  </div>
-  </header>
-
+<section id="main-content">
 <%= yield %>
-
+</section>
+<footer></footer>
 </div>
 
 <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>

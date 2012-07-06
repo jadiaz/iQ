@@ -1,0 +1,243 @@
+// ---------------------------------------------------------------------------
+// Imports
+
+@import "susy";
+@import "compass";
+@import "compass/css3";
+
+// ---------------------------------------------------------------------------
+// Basic Grid
+
+$total-columns  : 12;
+$column-width   : 4em;
+$gutter-width   : 1em;
+$grid-padding   : $gutter-width;
+$container-style: magic;
+
+$show-grid-backgrounds  : true;
+
+
+$hslOrange         : #F99B0C;
+$hslOrangeHighlight: lighten($hslOrange, 2%);
+$hslGray           : #AEAEAE;
+$hslWarmGray       : #494C49;
+$hslBlack          : #2C2C29;
+
+
+// ---------------------------------------------------------------------------
+// Z-Index Master List
+//
+// Used for a bird's eye view of components dependent on the z-axis
+// Try to avoid customizing these :)
+
+$zindexDropdown:          1000 !default;
+$zindexPopover:           1010 !default;
+$zindexTooltip:           1020 !default;
+$zindexFixedNavbar:       1030 !default;
+$zindexModalBackdrop:     1040 !default;
+$zindexModal:             1050 !default;
+
+// ---------------------------------------------------------------------------
+// Grays
+
+$black:                 #000 !default;
+$grayDarker:            #222 !default;
+$grayDark:              #333 !default;
+$gray:                  #555 !default;
+$grayLight:             #999 !default;
+$grayLighter:           #eee !default;
+$white:                 #fff !default;
+
+// ---------------------------------------------------------------------------
+// Accent Colors
+
+$blue:                  #049cdb !default;
+$blueDark:              #0064cd !default;
+$green:                 #46a546 !default;
+$red:                   #9d261d !default;
+$yellow:                #ffc40d !default;
+$orange:                #f89406 !default;
+$pink:                  #c3325f !default;
+$purple:                #7a43b6 !default;
+
+// ---------------------------------------------------------------------------
+// Links
+
+$linkColor:             $hslBlack !default;
+$linkColorHover:        darken($linkColor, 15%) !default;
+
+// ---------------------------------------------------------------------------
+// Navbar Options
+
+$navbarHeight:                    40px !default;
+$navbarBackground:                darken($hslOrange, 10%) !default;
+$navbarBackgroundHighlight:       $hslOrangeHighlight !default;
+
+$navbarText:                      $hslWarmGray !default;
+$navbarLinkColor:                 $hslWarmGray !default;
+$navbarLinkColorHover:            $white !default;
+$navbarLinkColorActive:           $navbarLinkColorHover !default;
+$navbarLinkBackgroundHover:       transparent !default;
+$navbarLinkBackgroundActive:      $navbarBackground !default;
+
+$navbarSearchBackground:          lighten($navbarBackground, 25%) !default;
+$navbarSearchBackgroundFocus:     $white !default;
+$navbarSearchBorder:              darken($navbarSearchBackground, 30%) !default;
+$navbarSearchPlaceholderColor:    #ccc !default;
+$navbarBrandColor:                $hslBlack !default;
+
+
+// ---------------------------------------------------------------------------
+// Typography
+
+$sansFontFamily:        "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$serifFontFamily:       Georgia, "Times New Roman", Times, serif !default;
+$monoFontFamily:        Menlo, Monaco, Consolas, "Courier New", monospace !default;
+
+$baseFontSize:          13px !default;
+$baseFontFamily:        $sansFontFamily !default;
+$baseLineHeight:        18px !default;
+$altFontFamily:         $serifFontFamily !default;
+
+$headingsFontFamily:    inherit !default; // empty to use BS default, $baseFontFamily
+$headingsFontWeight:    bold !default;    // instead of browser default, bold
+$headingsColor:         inherit !default; // empty to use BS default, $textColor
+
+// ---------------------------------------------------------------------------
+// Forms
+
+$inputBackground:               $white !default;
+$inputBorder:                   #ccc !default;
+$inputBorderRadius:             3px !default;
+$inputDisabledBackground:       $grayLighter !default;
+$formActionsBackground:         #f5f5f5 !default;
+
+// ---------------------------------------------------------------------------
+// Dropdowns
+
+$dropdownBackground:            $white !default;
+$dropdownBorder:                rgba(0,0,0,.2) !default;
+$dropdownLinkColor:             $grayDark !default;
+$dropdownLinkColorHover:        $white !default;
+$dropdownLinkBackgroundHover:   $linkColor !default;
+
+
+
+
+
+
+
+$bg-color:         #FFF;
+$header-bg-color:  #191919;
+
+$link-color:          lighten($hslOrange, 15%) !default;
+// $link-hover-color:    $tron-blue !default;
+$link-active-color:   #607890 !default;
+$link-visited-color:  lighten($hslOrange, 15%) !default;
+$link-focus-color:    #607890 !default;
+
+$selected-font-color:        #fff !default;
+$selected-background-color:  #ff5e99 !default;
+$list-left-margin:           1.8em !default;
+
+$base-font-family: Corbel, unquote("Lucida Grande"), unquote("Lucida Sans Unicode"), unquote("Lucida Sans"), unquote("DejaVu Sans"), unquote("Bitstream Vera Sans"), unquote("Liberation Sans"), Verdana, sans-serif !default;
+$base-font-size:    13px !default;
+$base-line-height:  1.231 !default;
+
+$font-color:  #AAA !default;
+
+
+// Navbar vertical align
+// -------------------------
+// Vertically center elements in the navbar.
+// Example: an element has a height of 30px, so write out `.navbarVerticalAlign(30px);` to calculate the appropriate top margin.
+@mixin navbarVerticalAlign($elementHeight) {
+  margin-top: ($navbarHeight - $elementHeight) / 2;
+}
+
+// ---------------------------------------------------------------------------
+// FONTS
+
+
+@mixin font-family-serif() {
+  font-family: $serifFontFamily;
+}
+@mixin font-family-sans-serif() {
+  font-family: $sansFontFamily;
+}
+@mixin font-family-monospace() {
+  font-family: $monoFontFamily;
+}
+@mixin font-shorthand($size: $baseFontSize, $weight: normal, $lineHeight: $baseLineHeight) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $lineHeight;
+}
+@mixin font-serif($size: $baseFontSize, $weight: normal, $lineHeight: $baseLineHeight) {
+  @include font-family-serif();
+  @include font-shorthand($size, $weight, $lineHeight);
+}
+@mixin font-sans-serif($size: $baseFontSize, $weight: normal, $lineHeight: $baseLineHeight) {
+  @include font-family-sans-serif();
+  @include font-shorthand($size, $weight, $lineHeight);
+}
+@mixin font-monospace($size: $baseFontSize, $weight: normal, $lineHeight: $baseLineHeight) {
+  @include font-family-monospace();
+  @include font-shorthand($size, $weight, $lineHeight);
+}
+
+// ---------------------------------------------------------------------------
+// Miscellaneous Mixins
+
+@mixin placeholder($color: $placeholderText) {
+  :-moz-placeholder {
+    color: $color;
+  }
+  :-ms-input-placeholder {
+    color: $color;
+  }
+  ::-webkit-input-placeholder {
+    color: $color;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Button backgrounds
+
+@mixin buttonBackground($startColor, $endColor) {
+  // gradientBar will set the background to a pleasing blend of these, to support IE<=9
+  @include background-image(linear-gradient($startColor, $endColor));
+  *background-color: $endColor; /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+  @include filter-gradient($startColor, $endColor);
+
+  // in these cases the gradient won't cover the background, so we override
+  &:hover, &:active, &.active, &.disabled, &[disabled] {
+    background-color: $endColor;
+    *background-color: darken($endColor, 5%);
+  }
+
+  // IE 7 + 8 can't handle box-shadow to show active, so we darken a bit ourselves
+  &:active,
+  &.active {
+    background-color: darken($endColor, 10%) \9;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Horizontal dividers
+// 
+// -------------------------
+// Dividers (basically an hr) within dropdowns and nav lists
+@mixin nav-divider($top: #e5e5e5, $bottom: $white) {
+  // IE7 needs a set width since we gave a height. Restricting just
+  // to IE7 to keep the 1px left/right space in other browsers.
+  // It is unclear where IE is getting the extra space that we need
+  // to negative-margin away, but so it goes.
+  *width: 100%;
+  height: 1px;
+  margin: (($baseLineHeight / 2) - 1) 1px; // 8px 1px
+  *margin: -5px 0 5px;
+  overflow: hidden;
+  background-color: $top;
+  border-bottom: 1px solid $bottom;
+}

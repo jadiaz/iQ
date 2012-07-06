@@ -7,7 +7,33 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<!-- Site Navigation -->
+<nav class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <%= link_to 'HSL iQ', root_path, :class => "brand" %>
+      <ul class="nav">
+        <li class="active"><a href="#">Overview</a></li>
+        <li><a href="#">Membership</a></li>
+        <li><a href="#">Treasury</a></li>
+        <li><a href="#">Tools</a></li>
+      </ul>
+      <ul class="nav pull-right">
+        <li class="divider-vertical"></li>
+        <li>
+          <% if current_user %>
+          <a href="#">Profile</a>
+          <% else %>
+          <%= link_to 'Sign In', sign_in_path %>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
+<!-- Main Content -->
+<div class="container"> 
   <header>
   <div id="header-base">
     <nav class="global-actions">
@@ -35,6 +61,8 @@
   </header>
 
 <%= yield %>
+
+</div>
 
 <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 </body>

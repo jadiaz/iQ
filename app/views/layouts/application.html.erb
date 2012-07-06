@@ -12,12 +12,14 @@
   <div class="navbar-inner">
     <div class="container">
       <%= link_to 'HSL iQ', root_path, :class => "brand" %>
+      <% if current_user %>
       <ul class="nav">
         <li class="active"><a href="#">Overview</a></li>
         <li><a href="#">Membership</a></li>
         <li><a href="#">Treasury</a></li>
         <li><a href="#">Tools</a></li>
       </ul>
+      <% end %>
       <ul class="nav pull-right">
         <li class="divider-vertical"></li>
         <li>

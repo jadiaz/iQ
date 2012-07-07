@@ -1,6 +1,10 @@
 <section id="login-wrapper">
-  <p id="notice"><%= notice %></p>
-  <p id="alert"><%= alert %></p>
+  <% if flash[:notice] %>
+  <div class="alert"><%= notice %></div>
+  <% elsif flash[:alert] %>
+  <div class="alert alert-error"><%= alert %></div>
+  <% end %>
+
   <div id="login">
     <%= form_tag sessions_path, :class => "form-horizontal", :method => :post do %>
     <fieldset>

@@ -22,13 +22,12 @@
       <% end %>
       <ul class="nav pull-right">
         <li class="divider-vertical"></li>
-        <li>
-          <% if current_user %>
-          <a href="#">Profile</a>
-          <% else %>
-          <%= link_to 'Sign In', sign_in_path %>
-          <% end %>
-        </li>
+        <% if current_user %>
+        <li><a href="#">Profile</a></li>
+        <li><%= link_to 'Sign Out', sign_out_path %></li>
+        <% else %>
+        <li><%= link_to 'Sign In', sign_in_path %></li>
+        <% end %>
       </ul>
     </div>
   </div>

@@ -2,13 +2,25 @@
   <p id="notice"><%= notice %></p>
   <p id="alert"><%= alert %></p>
   <div id="login">
-    <h1>Sign in to HeatSync Labs iQ</h1>
-    <%= form_tag sessions_path, :method => :post do %>
-      <dl>
-        <dd><%= text_field_tag :email, nil, :placeholder => "Email address" %></dd>
-        <dd><%= password_field_tag :password, nil, :placeholder => "Password" %></dd>
-      </dl>
-      <p><%= submit_tag 'sign in' %></p>
+    <%= form_tag sessions_path, :class => "form-horizontal", :method => :post do %>
+    <fieldset>
+      <legend>Sign in to HeatSync Labs iQ</legend>
+      <div class="control-group">
+        <label class="control-label">Email:</label>
+        <div class="controls">
+          <%= text_field_tag :email, nil, :placeholder => "Email address", :class => "input-xlarge" %>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label">Password:</label>
+        <div class="controls">
+          <%= password_field_tag :password, nil, :placeholder => "Password", :class => "input-xlarge" %>
+        </div>
+      </div>
+      <div>
+        <%= submit_tag "Sign In", :class => "btn" %>
+      </div>
+    </fieldset>
     <% end%>
   </div>
   <div id="login-info">

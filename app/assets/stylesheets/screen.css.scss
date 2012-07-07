@@ -4,7 +4,8 @@
 @import "partials/base";
 @import "partials/navbar";
 @import "partials/nav";
-
+@import "partials/buttons";
+@import "partials/forms";
 
 /* -------------------------------------------------------------------------*/
 /* Layout */
@@ -14,6 +15,3 @@ body {
   padding: 40px;
   // @include susy-grid-background;
 }
-
-
-

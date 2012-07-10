@@ -13,10 +13,10 @@
       <%= link_to 'HSL iQ', root_path, :class => "brand" %>
       <% if current_user %>
       <ul class="nav">
-        <li class="active"><a href="#">Overview</a></li>
-        <li><a href="#">Membership</a></li>
-        <li><a href="#">Treasury</a></li>
-        <li><a href="#">Tools</a></li>
+        <li class="<%= current_page?(root_path) ? 'active' : '' %>"><a href="#">Overview</a></li>
+        <li class="<%= current_page?(members_path) ? 'active' : '' %>"><%= link_to "Members", members_path %></li>
+        <li class="<%= current_page?(sign_in_path) ? 'active' : '' %>"><a href="#">Treasury</a></li>
+        <li class="<%= current_page?(tools_path) ? 'active' : '' %>"><%= link_to "Tools", tools_path %></li>
       </ul>
       <% end %>
       <ul class="nav pull-right">

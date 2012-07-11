@@ -1,0 +1,12 @@
+<div>
+  <%= image_tag 'logo.png', :class => 'pull-right' %>
+  <h2>Edit a Tool</h2>
+
+  <%= render 'form', :tool => @tool, :users => @users %>
+  
+  <%= link_to "Delete this tool", tool_path, 
+                                  :method => :delete, 
+                                  :class => 'btn', 
+                                  :confirm => "Are you sure?" 
+                                 %>
+</div>

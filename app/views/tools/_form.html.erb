@@ -1,0 +1,18 @@
+<%= form_for tool, :html => { :multipart => true } do |t| %>
+  <p>
+  <%= t.label "Name: " %>&nbsp;
+  <%= t.text_field :name %>
+  </p>
+  <p>
+  <%= t.label "Identification #: " %>&nbsp;
+  <%= t.text_field :identification_number, :placeholder => "serial no., part no., etc" %>
+  </p>
+  <p>
+  <%= t.label "Description: " %>&nbsp;
+  <%= t.text_field :description %>
+  </p>
+  <p>
+  <%= t.label "Owner: " %>&nbsp;
+  </p>
+  <%= t.submit :class => "btn" %><%= link_to "Cancel", tools_path %>
+<% end %>

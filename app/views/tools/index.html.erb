@@ -1,0 +1,46 @@
+<h1>Tools</h1>
+
+<!-- Action Bar -->
+<div class="btn-toolbar">
+  <%= link_to "New Tool", new_tool_path, :class => "btn" %>
+</div>
+
+
+
+  <div id="tool-filters">
+    <ul id="filter-list">
+      <li><%= link_to 'Week', tools_path(:filter => 'week') %></li>
+      <li>|</li>
+      <li><%= link_to 'Month', tools_path(:filter => 'month') %></li>
+      <li>|</li>
+      <li><%= link_to 'All', tools_path(:filter => 'all') %></li>
+    </ul><!-- /filter-list -->
+  </div><!-- /tool-filters -->
+
+  <div id="tool-list">
+    <div class="tool-summary">
+
+      <table>
+        <thead>
+          <tr>
+            <th>Status</th>
+            <th>Tool</th>
+            <th>Station</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @tools.each do |tool| %>
+          <tr class="<%= cycle('tool-item-even', 'tool-item-odd') -%>">
+            <td class="cell-status"><span class="status"><%= tool.status %></span></td>
+            <td class="cell-tool">
+              <span style="font-weight: bold;"><%= tool.name %>:</span> <%= tool.description %>...<%= link_to "more information", tool_path(tool) %>
+              <div><span>Tags</span><ul><li style="background-color: #888; color: #fff; font-weight: bold;">hand-tool</li><ul></div>
+              <div><span>Last updated on:</span><%= tool.updated_at %></div>
+            </td>
+            <td class="cell-location"><%= tool.location %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div><!-- / -->
+  </div><!-- /tool-list -->

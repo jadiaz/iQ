@@ -21,3 +21,8 @@ a {
   color          : rgb(0, 136, 204);
   text-decoration: none;
 }
+
+#main-content {
+  @include span-columns(12 omega);
+  @include susy-grid-background;
+}
